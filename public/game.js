@@ -189,19 +189,19 @@ function next(color){
             fail()
             var img = document.createElement("img");
             if (cartetiree.type == 0) {
-                img.setAttribute("src","./media/CardSortieFleurFalse.svg")
+                img.setAttribute("src","./media/cardSortieFleurFalse.svg")
             }
             else{
-                img.setAttribute("src","./media/CardSortieSkullFalse.svg")
+                img.setAttribute("src","./media/cardSortieSkullFalse.svg")
             }
             document.getElementById("sorties").appendChild(img);
     }else{
         var img = document.createElement("img");
         if (cartetiree.type == 0) {
-            img.setAttribute("src","./media/CardSortieFleur.svg")
+            img.setAttribute("src","./media/cardSortieFleur.svg")
         }
         else{
-            img.setAttribute("src","./media/CardSortieSkull.svg")
+            img.setAttribute("src","./media/cardSortieSkull.svg")
         }
         document.getElementById("sorties").appendChild(img);
     }
