@@ -53,4 +53,13 @@ class Player{
     removeLive(){
         this.lives--
     }
+
+    /*
+    clearzone
+    */
+   clearCounts(){
+       this.softdrinkcount = 0;
+       this.strongdrinkcount = 0;
+       this.oneshotcount = 0;
+   }
 }
