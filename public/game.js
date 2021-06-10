@@ -118,7 +118,6 @@ function showDrinks(){
 }
 function switchroles(){
     if (akiletour == player1) {
-        document.getElementById("sorties").innerHTML = ""
         document.getElementById("infos").innerHTML = ""
         showDrinks()
         //<div id="player2_sorties"><span id="player">Jou2 :</span> <span id="numbOneShots">3</span> <img src="./media/chug.svg"> 
