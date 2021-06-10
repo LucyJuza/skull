@@ -172,6 +172,9 @@ function fail(){
     }
 }
 function next(color){
+    if (roundnr == 0) {
+        document.getElementById("sorties").innerHTML = ""
+    }
     document.getElementById("quest").innerText = akiletour.getName()+ ", Fleur ou crâne?"
     document.getElementById("infos").innerText = ""
     roundnr++
