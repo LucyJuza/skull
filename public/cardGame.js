@@ -1,10 +1,8 @@
 class CardGame {
     static generateCardGame(){
         /* types 
-        0 : piques
-        1 : carreaux
-        2 : coeurs
-        3 : trèfles
+        0 : fleur
+        1 : crâne
         */
         let array = []
         for (let v = 0; v < 12; v++) {

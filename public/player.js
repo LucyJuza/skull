@@ -39,7 +39,13 @@ class Player{
     add zone
     */
     addSoftDrinks(number){
-        this.softdrinkcount += number
+        if (this.softdrinkcount + number > 12) {
+            this.strongdrinkcount += (this.softdrinkcount + number) - 12
+            this.softdrinkcount = 12;
+        }
+        else{
+            this.softdrinkcount += number
+        }
     }
     addStrongDrinks(number){
         this.strongdrinkcount += number

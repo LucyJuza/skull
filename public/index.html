@@ -25,14 +25,31 @@
             <button class ="drink" id="drink" onclick="playInterface()">Boire</button>
         </div>
         <div class="hidden" id="game">
-            <button id="init" onclick="initgame()">Jouer</button>
+            <h1>Skull</h1>
+            <button id="newGame" onclick="initgame()">New Game</button>
             <div id="quest"></div>
-            <div id="textCard"></div>
-            <button id="flower" onclick="next(0)">Fleur</button>
-            <button id="skull" onclick="next(1)">Crâne</button>
-            <div id="infos"></div>
-            <div id="sorties"></div>
-            <div id="vies"></div>
+            <div class="btncont">
+                <button id="skull" onclick="next(1)">Crâne</button>
+                <button id="flower" onclick="next(0)">Fleur</button>
+            </div>
+            <div id="sorties">
+                <!--<img src="./media/cardSortieFleur.svg">
+                <img src="./media/CardSortieFleurFalse.svg">
+                <img src="./media/cardSortieFleur.svg">
+                <img src="./media/cardSortieFleur.svg">
+                <img src="./media/cardSortieFleur.svg">
+                <img src="./media/cardSortieFleur.svg">
+                <img src="./media/cardSortieFleur.svg">
+                <img src="./media/cardSortieFleur.svg">
+                <img src="./media/cardSortieFleur.svg">
+                <img src="./media/cardSortieSkull.svg">
+                <img src="./media/cardSortieSkull.svg">
+                <img src="./media/cardSortieSkullFalse.svg">-->
+            </div>
+            <div id="infos">
+                <!--<div id="player1_sorties"><span id="player">Jou1 :</span> <span id="numbOneShots">1</span> <img src="./media/chug.svg"> <span id="numbSofts">12</span> <img src="./media/beer.svg"> <span id="numbStrongs">1</span> <img src="./media/shot.svg"></div>
+                <div id="player2_sorties"><span id="player">Jou2 :</span> <span id="numbOneShots">3</span> <img src="./media/chug.svg"> <span id="numbSofts">12</span> <img src="./media/beer.svg"> <span id="numbStrongs">3</span> <img src="./media/shot.svg"></div>-->
+            </div>
         </div>
     </div>
 </body>

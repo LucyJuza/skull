@@ -16,6 +16,8 @@ function playInterface() {
     }else{
         document.getElementById("game").classList.remove("hidden");
         document.getElementById("accueil").classList.add("hidden");
+        document.getElementById("skull").disabled = true;
+        document.getElementById("flower").disabled = true;
     }
 }
 
@@ -30,16 +32,14 @@ function getRandomCard(){
 function initgame() {
     document.getElementById("flower").disabled = false;
     document.getElementById("skull").disabled = false;
-    document.getElementById("sorties").innerText = ""
-    document.getElementById("textCard").innerText = ""
-    document.getElementById("infos").innerText = ""
+    document.getElementById("sorties").innerHTML = ""
+    document.getElementById("infos").innerHTML = ""
     player1 = new Player(document.getElementById("p1n").value)
     player2 = new Player(document.getElementById("p2n").value)
     roundnr = 0
     akiletour = player1
     regencardGame();
     document.getElementById("quest").innerText = akiletour.getName()+ ", Fleur ou crâne?"
-    document.getElementById("vies").innerText = "Vies:\n" +
         player1.getName() + " : " + player1.lives + "\n" +
         player2.getName() + " : " + player2.lives;
 }
@@ -52,12 +52,77 @@ function regencardGame(){
     }
     alreadyOut = [];
 }
+function showDrinks(){
+    var divplay1 = document.createElement("div");
+        divplay1.setAttribute("id","player1_sorties");
+        var divplay2 = document.createElement("div");
+        divplay2.setAttribute("id","player2_sorties");
+
+        var imgstrongs = document.createElement("img")
+        imgstrongs.setAttribute("src","./media/shot.svg")
+        var imgos = document.createElement("img")
+        imgos.setAttribute("src","./media/chug.svg")
+        var imgsofts = document.createElement("img");
+        imgsofts.setAttribute("src","./media/beer.svg")
+
+        var imgstrongs1 = document.createElement("img")
+        imgstrongs1.setAttribute("src","./media/shot.svg")
+        var imgos1 = document.createElement("img")
+        imgos1.setAttribute("src","./media/chug.svg")
+        var imgsofts1 = document.createElement("img");
+        imgsofts1.setAttribute("src","./media/beer.svg")
+
+        var spanplayer1 = document.createElement("span");
+        spanplayer1.setAttribute("id","player");
+        spanplayer1.innerText = player1.getName() + " :";
+        var spanoneshotsplay1 = document.createElement("span")
+        spanoneshotsplay1.setAttribute("id","numbOneShots")
+        spanoneshotsplay1.innerText = player1.getOneShotCount();
+        var spansoftplay1 = document.createElement("span")
+        spansoftplay1.setAttribute("id","numbSofts")
+        spansoftplay1.innerText = player1.getSoftDrinkCount();
+        var spanstrongsplay1 = document.createElement("span")
+        spanstrongsplay1.setAttribute("id","numbStrongs")
+        spanstrongsplay1.innerText = player1.getStrongDrinkCount();
+
+        var spanplayer2 = document.createElement("span");
+        spanplayer2.setAttribute("id","player");
+        spanplayer2.innerText = player2.getName() + " :";
+        var spanoneshotsplay2 = document.createElement("span")
+        spanoneshotsplay2.setAttribute("id","numbOneShots")
+        spanoneshotsplay2.innerText = player2.getOneShotCount();
+        var spansoftplay2 = document.createElement("span")
+        spansoftplay2.setAttribute("id","numbSofts")
+        spansoftplay2.innerText = player2.getSoftDrinkCount();
+        var spanstrongsplay2 = document.createElement("span")
+        spanstrongsplay2.setAttribute("id","numbStrongs")
+        spanstrongsplay2.innerText = player2.getStrongDrinkCount();
+
+        document.getElementById("infos").appendChild(spanplayer1)
+        divplay1.appendChild(spanoneshotsplay1)
+        divplay1.appendChild(imgos)
+        divplay1.appendChild(spansoftplay1)
+        divplay1.appendChild(imgsofts)
+        divplay1.appendChild(spanstrongsplay1)
+        divplay1.appendChild(imgstrongs)
+        document.getElementById("infos").appendChild(divplay1)
+
+        document.getElementById("infos").appendChild(spanplayer2)
+        divplay2.appendChild(spanoneshotsplay2)
+        divplay2.appendChild(imgos1)
+        divplay2.appendChild(spansoftplay2)
+        divplay2.appendChild(imgsofts1)
+        divplay2.appendChild(spanstrongsplay2)
+        divplay2.appendChild(imgstrongs1)
+        document.getElementById("infos").appendChild(divplay2)
+}
 function switchroles(){
     if (akiletour == player1) {
-        document.getElementById("sorties").innerText = ""
-        document.getElementById("infos").innerText = "Millieu de partie\n"+ "Le joueur " + 
-            player1.getName() + " doit boire " + player1.getSoftDrinkCount() + " gorgées faibles, " + player1.getStrongDrinkCount() + " gorgées fortes et " + player1.getOneShotCount() + " cul-secs\n"+
-            "Le joueur " + player2.getName() + " doit boire " + player2.getSoftDrinkCount() + " gorgées faibles, " + player2.getStrongDrinkCount() + " gorgées fortes et " + player2.getOneShotCount() + " cul-secs";
+        document.getElementById("sorties").innerHTML = ""
+        document.getElementById("infos").innerHTML = ""
+        showDrinks()
+        //<div id="player2_sorties"><span id="player">Jou2 :</span> <span id="numbOneShots">3</span> <img src="./media/chug.svg"> 
+        //<span id="numbSofts">12</span> <img src="./media/beer.svg"> <span id="numbStrongs">3</span> <img src="./media/shot.svg"></div>
         console.log("changement de rôles")
         roundnr = 0
         regencardGame()
@@ -67,9 +132,8 @@ function switchroles(){
         document.getElementById("quest").innerText = akiletour.getName()+ ", Fleur ou crâne?"
     }else{
         document.getElementById("quest").innerText = "";
-        document.getElementById("infos").innerText = "Fin de la partie\n"+ "Le joueur " + 
-            player1.getName() + " doit boire " + player1.getSoftDrinkCount() + " gorgées faibles, " + player1.getStrongDrinkCount() + " gorgées fortes et " + player1.getOneShotCount() + " cul-secs\n"+
-            "Le joueur " + player2.getName() + " doit boire " + player2.getSoftDrinkCount() + " gorgées faibles, " + player2.getStrongDrinkCount() + " gorgées fortes et " + player2.getOneShotCount() + " cul-secs";
+        document.getElementById("infos").innerHTML = ""
+        showDrinks();
         console.log("Le joueur " + player1.getName() + " doit boire " + player1.getSoftDrinkCount() + " gorgées faibles, " + player1.getStrongDrinkCount() + " gorgées fortes et " + player1.getOneShotCount() + " cul-secs")
         console.log("Le joueur " + player2.getName() + " doit boire " + player2.getSoftDrinkCount() + " gorgées faibles, " + player2.getStrongDrinkCount() + " gorgées fortes et " + player2.getOneShotCount() + " cul-secs")
         document.getElementById("flower").disabled = true;
@@ -121,25 +185,44 @@ function next(color){
     var cartetiree = getRandomCard()
     alreadyOut.push(cartetiree);
     console.log("carte tirée: " + cartetiree.toString())
-    if (color == 0) {
-        if (cartetiree.type == 1) {
+    if (color != cartetiree.type) {
             fail()
-        }
+            var img = document.createElement("img");
+            if (cartetiree.type == 0) {
+                img.setAttribute("src","./media/CardSortieFleurFalse.svg")
+            }
+            else{
+                img.setAttribute("src","./media/CardSortieSkullFalse.svg")
+            }
+            document.getElementById("sorties").appendChild(img);
     }else{
+        var img = document.createElement("img");
         if (cartetiree.type == 0) {
-            fail()
+            img.setAttribute("src","./media/CardSortieFleur.svg")
         }
+        else{
+            img.setAttribute("src","./media/CardSortieSkull.svg")
+        }
+        document.getElementById("sorties").appendChild(img);
     }
-    document.getElementById("textCard").innerText = "Carte: " + cartetiree.toString()
     if (roundnr == 12) {
         if (akiletour == player1) {
             if (akiletour.lives == 2) {
                 console.log("ajouté " + 3 + " cul-sec à " + player2.getName())
                 player2.addOneShots(3)
+            }else if (akiletour.lives == 1){
+                console.log("ajouté " + 12 + " softs à " + player2.getName())
+                player2.addSoftDrinks(12)
             }
         }
         else{
-            player1.addOneShots(3);
+            if (player2.lives == 2) {
+                console.log("ajouté " + 3 + " cul-sec à " + player1.getName())
+                player1.addOneShots(3)
+            }else if(player2.lives == 1){
+                console.log("ajouté " + 12 + " softs à " + player1.getName())
+                player1.addSoftDrinks(12)
+            }
         }
         switchroles()
     }else{
@@ -147,15 +230,4 @@ function next(color){
             switchroles()            
         }
     }
-    document.getElementById("vies").innerText = "Vies:\n" +
-        player1.getName() + " : " + player1.lives + "\n" +
-        player2.getName() + " : " + player2.lives;
-    document.getElementById("sorties").innerText = "Cartes sorties: "
-    alreadyOut.forEach( (c,i) => {
-        if (i < alreadyOut.length -1) {
-            document.getElementById("sorties").innerText += c.toString() + ", "
-        }else{
-            document.getElementById("sorties").innerText += c.toString()
-        }
-    });
 }
