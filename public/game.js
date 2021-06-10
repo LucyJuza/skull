@@ -7,6 +7,19 @@ var roundnr = 0;
 var akiletour = player1
 var alreadyOut = []
 
+function playInterface() {
+    if (document.getElementById("p1n").value == "") {
+        document.getElementById("p1n").focus()
+    }
+    else if (document.getElementById("p2n").value == "") {
+        document.getElementById("p2n").focus()
+    }else{
+        document.getElementById("game").classList.remove("hidden");
+        document.getElementById("accueil").classList.add("hidden");
+    }
+}
+
+
 function getRandomCard(){
     var index = Math.floor(Math.random() * cardgame.length );
     var carte = cardgame[index];
@@ -41,6 +54,7 @@ function regencardGame(){
 }
 function switchroles(){
     if (akiletour == player1) {
+        document.getElementById("sorties").innerText = ""
         document.getElementById("infos").innerText = "Millieu de partie\n"+ "Le joueur " + 
             player1.getName() + " doit boire " + player1.getSoftDrinkCount() + " gorgées faibles, " + player1.getStrongDrinkCount() + " gorgées fortes et " + player1.getOneShotCount() + " cul-secs\n"+
             "Le joueur " + player2.getName() + " doit boire " + player2.getSoftDrinkCount() + " gorgées faibles, " + player2.getStrongDrinkCount() + " gorgées fortes et " + player2.getOneShotCount() + " cul-secs";
@@ -78,11 +92,11 @@ function fail(){
         player2.addOneShots(1)
         console.log("ajouté " + 1 + " cul-sec aux deux")
     }else{
-        if (roundnr <= 6) {
+        if (roundnr < 6) {
             akiletour.addSoftDrinks(roundnr)
             console.log("ajouté " + roundnr + " soft à " + akiletour.getName())
         }
-        if (roundnr >= 5) {
+        if (roundnr > 5) {
             if (akiletour == player1) {
                 player2.addSoftDrinks(roundnr)
                 console.log("ajouté " + roundnr + " soft à " + player2.getName())

@@ -4,29 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Roboto&display=swap" rel="stylesheet">
     <script src="./card.js"></script>
     <script src="./cardGame.js"></script>
     <script src="./player.js""></script>
     <script src="./game.js""></script>
+    <link rel="stylesheet" href="style.css">
     <title>Skull</title>
 </head>
 <body>
-    <h1>Skull, le jeu ou il n'y a pas de gagnants</h1>
-    <h2>Noms des joueurs</h2>
-    <div id="inputs">
-        <input type="text" name="p1n" id="p1n">
-        <input type="text" name="p2n" id="p2n">
-    </div>
-    <h2>Le jeu</h2>
-    <div id="game">
-        <button id="init" onclick="initgame()">Jouer</button>
-        <div id="quest"></div>
-        <div id="textCard"></div>
-        <button id="flower" onclick="next(0)">Fleur</button>
-        <button id="skull" onclick="next(1)">Crâne</button>
-        <div id="infos"></div>
-        <div id="sorties"></div>
-        <div id="vies"></div>
+    <div id="main">
+        <div id="accueil">
+            <h1>Skull</h1>
+            <h2>Le jeu ou il n'y a pas de gagnants</h2>
+            <div class="inputs" id="inputs">
+                <input type="text" class="p1n" placeholder="Joueur 1" name="p1n" id="p1n">
+                <input type="text" class="p2n" placeholder="Joueur 2" name="p2n" id="p2n">
+            </div>
+            <button class ="drink" id="drink" onclick="playInterface()">Boire</button>
+        </div>
+        <div class="hidden" id="game">
+            <button id="init" onclick="initgame()">Jouer</button>
+            <div id="quest"></div>
+            <div id="textCard"></div>
+            <button id="flower" onclick="next(0)">Fleur</button>
+            <button id="skull" onclick="next(1)">Crâne</button>
+            <div id="infos"></div>
+            <div id="sorties"></div>
+            <div id="vies"></div>
+        </div>
     </div>
 </body>
 </html>
