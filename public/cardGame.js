@@ -1,9 +1,5 @@
 class CardGame {
-    cards
-    constructor(){
-        this.cards = this.generateCardGame()
-    }
-    generateCardGame(){
+    static generateCardGame(){
         /* types 
         0 : piques
         1 : carreaux
@@ -11,17 +7,12 @@ class CardGame {
         3 : trèfles
         */
         let array = []
-        for (let t = 0; t < 4; t++) {
-            for (let v = 1; v < 14; v++) {
-                array.push(new Card(t,v));
-            }
+        for (let v = 0; v < 12; v++) {
+            array.push(new Card(0));
+        }
+        for (let v = 0; v < 4; v++) {
+            array.push(new Card(1));
         }
         return array;
-    }
-    getCards(){
-        return this.cards;
-    }
-    getCard(index){
-        return this.cards[index]
     }
 }
