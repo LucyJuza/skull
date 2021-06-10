@@ -1,0 +1,30 @@
+{
+  "name": "skulljs",
+  "version": "1.0.0",
+  "description": "Skull game (alcool)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noejuza/skulljs.git"
+  },
+  "keywords": [
+    "skull",
+    "alcool",
+    "game",
+    "drink",
+    "play",
+    "coma"
+  ],
+  "author": "noejuza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/noejuza/skulljs/issues"
+  },
+  "homepage": "https://github.com/noejuza/skulljs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
