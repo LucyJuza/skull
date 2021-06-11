@@ -18,12 +18,12 @@ h1,h2{
 }
 h1{
     font-size: 72px;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 h2{
-    margin-top: 2vh;
-    margin-bottom: 10vh;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
 }
 h3{
     font-family: 'Roboto', sans-serif;
@@ -37,7 +37,7 @@ h3{
 }
 .p1n{
     font-family: 'Roboto', sans-serif;
-    margin-bottom: 8vh;
+    margin-bottom: 4vh;
     outline-color: #D902EE;
     font-size: 18px;
     border: 0;
@@ -58,7 +58,7 @@ h3{
     text-align: center;
     width: 93%;
     height: 5vh;
-    margin-bottom: 15vh;
+    margin-bottom: 8vh;
     margin-right: auto;
     margin-left: auto;
 }
@@ -74,9 +74,9 @@ h3{
 }
 .drink{
     font-family: 'Caveat Brush';
-    font-size: 48px;
+    font-size: 2.5em;
     width: 100%;
-    height: 10vh;
+    height: 15vh;
     background-color: #F162FF;
     text-align: center;
 }
