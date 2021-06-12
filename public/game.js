@@ -7,6 +7,16 @@ var roundnr = 0;
 var akiletour = player1
 var alreadyOut = []
 
+function menu() {
+    document.getElementById("sorties").innerHTML = ""
+    document.getElementById("infos").innerHTML = ""
+    document.getElementById("quest").innerText = ""
+    document.getElementById("accueil").classList.remove("hidden");
+    document.getElementById("game").classList.add("hidden");
+    document.getElementById("skull").disabled = true;
+    document.getElementById("flower").disabled = true;
+}
+
 function playInterface() {
     if (document.getElementById("p1n").value == "") {
         document.getElementById("p1n").focus()
