@@ -9,7 +9,7 @@
 online skull alcool drinking game
 Based om an original Idea from [Larguma](https://github.com/Larguma)
 
-[Online version](https://skull-drink.herokuapp.com/)
+[Online version](https://skull-noejuza.vercel.app/)
 
 ## Run locally
 ~~~
